@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Container from './Container';
 import HideContainerButtons from './HideContainerButtons';
+import SubContainer from './SubContainer';
 import logo from './logo.svg';
 import './App.css';
 
@@ -41,20 +42,13 @@ class App extends Component {
   }
 
   render() {
-    let containers = [<div>Hello</div>, <div>World</div>]
+    let subContainers = [<SubContainer bc="deepskyblue">Hello</SubContainer>, <SubContainer bc="salmon">World</SubContainer>]
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <button onClick={this.handleClick}>Switch orientation</button>
         <button onClick={this.revealAllSubContainers}>Unhide all containers</button>
-        <HideContainerButtons subContainers={containers} addToHidden={this.addHiddenIndex}/>
-        <Container subContainers={containers} orientation={this.state.orientation} hidden={this.state.hidden}/>
+        <HideContainerButtons subContainers={subContainers} addToHidden={this.addHiddenIndex}/>
+        <Container subContainers={subContainers} orientation={this.state.orientation} hidden={this.state.hidden}/>
       </div>
     );
   }
