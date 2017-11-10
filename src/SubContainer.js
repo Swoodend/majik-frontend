@@ -13,21 +13,11 @@ export default class SubContainer extends Component{
     }
 
     handleClick(){
-        let { orientation } = this.props;
-        if (orientation === 'horizontal') {
-            this.setState({
-                width: 0,
-                height: 100,
-                text: null
-            })
-        } else {
-            this.setState({
-                height: 0,
-                width: 100,
-                text: null
-            })
-        }
-        
+        this.setState({
+            width: 0,
+            height: 0,
+            text: null
+        });
     }
 
     render(){
