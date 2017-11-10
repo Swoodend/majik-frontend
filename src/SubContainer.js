@@ -6,9 +6,20 @@ export default class SubContainer extends Component{
         super(props)
         this.handleClick = this.handleClick.bind(this);
         this.state = {
-            width: 100,
-            height: 100,
+            width: this.props.width,
+            height: this.props.height,
             text: this.props.children
+        }
+    }
+
+    componentWillReceiveProps(nextProps){
+        let {reset} = nextProps;
+        if (reset){
+            this.setState({
+                height: 100,
+                width: 100,
+                text: reset.text
+            })
         }
     }
 
@@ -27,7 +38,7 @@ export default class SubContainer extends Component{
                 {value => 
                     <div onClick={this.handleClick}
                         style={{width: `${value.width}%`, height:`${value.height}%`, backgroundColor:this.props.bc}}
-                    >
+                    > 
                         {this.state.text}
                     </div>
                 }
