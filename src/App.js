@@ -15,7 +15,7 @@ class App extends Component {
     
     this.state = {
       orientation: 'horizontal',
-      hidden: [] //works with an index of 0 or 1. trying to handle hiding multiple inputs with array
+      hidden: []
     };
   }
 
@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   render() {
-    let subContainers = [<SubContainer bc="deepskyblue">Hello</SubContainer>, <SubContainer bc="salmon">World</SubContainer>]
+    let subContainers = [<SubContainer orientation={this.state.orientation} index={0} key={0} bc="deepskyblue">Hello</SubContainer>, <SubContainer orientation={this.state.orientation} index={1} key={1} bc="salmon">World</SubContainer>]
     return (
       <div className="App">
         <button onClick={this.handleClick}>Switch orientation</button>
