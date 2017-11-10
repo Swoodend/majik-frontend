@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       orientation: 'horizontal',
       defaultHeight: 100,
-      defaultText: "SubComponent",
+      defaultText: "Subcontainer",
       reset: false
     };
   }
@@ -30,7 +30,7 @@ class App extends Component {
     //this is stupid but it works for now
     this.setState({
       reset: {
-        text: "SubComponent"
+        text: "Subcontainer"
       }
     }, () => {
       this.setState({
